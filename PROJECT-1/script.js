@@ -45,8 +45,15 @@ const quotes = [
   }
 ]
 
+let lastRandom = -1; // Initialize to an invalid index
+
 btn.addEventListener('click', function() {
-  let random = Math.floor(Math.random() * quotes.length)
+  let random;
+  do {
+    random = Math.floor(Math.random() * quotes.length);
+  } while (random === lastRandom); // Keep generating random numbers until it's different from the previous one
+
+  lastRandom = random; // Update the lastRandom variable
 
   quote.innerText = quotes[random].quote;
   person.innerText = quotes[random].person;
