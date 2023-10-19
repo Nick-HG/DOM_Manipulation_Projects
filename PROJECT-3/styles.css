@@ -48,5 +48,16 @@ body {
 
   height: 0px;
   overflow: hidden;
-  transform: .5s;
+  transition: .5s;
+}
+
+/* Javascript styling link */
+.accordion .content-container.active .answer {
+  height: 150px;
+}
+
+.accordion .content-container.active .question::after {
+  content: '-';
+  font-size: 30px;
+  transition: .5s;
 }
