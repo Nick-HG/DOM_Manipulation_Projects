@@ -25,7 +25,7 @@ addTask.addEventListener("click", function() {
   deleteButton.classList.add('deleteTask');
   task.appendChild(deleteButton);
 
-  
+
   if (inputTask.value === "") {
     alert("Please Enter a Task")
   } else {
@@ -33,6 +33,16 @@ addTask.addEventListener("click", function() {
   }
 
   inputTask.value = "";
+
+  checkButton.addEventListener("click", function() {
+    checkButton.parentElement.style.textDecoration = "line-through";
+  })
+
+  deleteButton.addEventListener("click", function(e) {
+    let target = e.target;
+
+    target.parentElement.parentElement.remove();
+  })
 
 })
 
